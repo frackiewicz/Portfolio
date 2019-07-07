@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !=www.fillipfrackiewicz.com
+RewriteRule (.*) https://www.fillipfrackiewicz.com/$1 [R=301,L]
