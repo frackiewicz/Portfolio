@@ -350,8 +350,11 @@ a:visited {
   flex-shrink: 0;
 
   width: 1px;
-  height: 40px;
+  height: 60px;
   background: linear-gradient(to bottom, transparent, var(--main-ui-primary-color))
+}
+.picture-vertical-gradient:nth-child(1) {
+  height: 64px;
 }
 
 #profile-picture {

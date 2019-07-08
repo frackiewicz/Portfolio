@@ -17,6 +17,7 @@ const iconColor = "#74A1B6";
 
 var inIntro = true;
 
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -34,7 +35,7 @@ function downloadURI(uri, name)
 }
 
 var passwordHash = 1570204103;
-console.log(stringHashCode("4UbFCe"));
+//console.log(stringHashCode("4UbFCe"));
 
 function stringHashCode(string) {
   var hash = 0, i, chr;
@@ -49,6 +50,7 @@ function stringHashCode(string) {
 
 document.addEventListener('DOMContentLoaded',function(event){
   /* INTRODUCTION */
+
   var timeouts = [];
 
   {
@@ -57,6 +59,13 @@ document.addEventListener('DOMContentLoaded',function(event){
       document.getElementById("body").onclick = function() {
         if(inIntro) switchToPortfolio();
       };
+
+      document.getElementById("download-box-input-field").addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("download-box-button").click();
+        }
+      });
 
       timeouts.push(setTimeout(function () {
         startTypingLine(0);
@@ -216,11 +225,11 @@ function downloadAnimation() {
       setTimeout(function () {
 
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", 'http://localhost:63342/Portfolio/src/humans.txt');
+        xhr.open("GET", 'doc/CV Frackiewicz.pdf');
         xhr.responseType = "blob";
 
         xhr.onload = function () {
-          saveData(this.response, 'file');
+          saveData(this.response, 'CV Frackiewicz');
         };
         xhr.send();
         downloaded = true;
