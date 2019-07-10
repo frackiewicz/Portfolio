@@ -68,6 +68,12 @@ a:visited {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  #wrapper {
+    justify-content: normal;
+  }
+}
+
 .clean-header {
   margin-top: 20px;
   margin-left: auto;
